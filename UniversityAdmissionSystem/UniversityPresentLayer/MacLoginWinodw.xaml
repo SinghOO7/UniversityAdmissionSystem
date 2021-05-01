@@ -1,0 +1,32 @@
+﻿<Window x:Class="UniversityAdmissionPL.MacLoginWinodw"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UniversityAdmissionPL"
+        mc:Ignorable="d"
+        Title="Member Of Admission Committee Login" Height="500" Width="800" ResizeMode="CanMinimize" Icon="University.jpg">
+    <Window.Background>
+        <ImageBrush ImageSource="University.jpg"/>
+    </Window.Background>
+    <Border Background="Black" CornerRadius="20" Margin="20,12,19.6,20.4">
+        <StackPanel Margin="10,10,10,10">
+            <StackPanel.Background>
+                <ImageBrush ImageSource="University.jpg" Opacity="0.75"/>
+            </StackPanel.Background>
+
+            <Label Content="MAC Login Portal" Foreground="Black" FontSize="25" HorizontalAlignment="Center" Height="49" Margin="258,10,242.6,0" FontWeight="Bold" Width="233" >
+                <Label.Background>
+                    <SolidColorBrush Color="Black" Opacity="0"/>
+                </Label.Background>
+            </Label>
+            <Separator/>
+            <Label Content="LoginId" FontSize="25" Margin="10,0,423.6,0" Width="300" FontWeight="Bold" Grid.IsSharedSizeScope="True" Foreground="White" Background="{x:Null}"/>
+            <TextBox x:Name="LoginId_txt" Background="FloralWhite" Foreground="Black" FontSize="18" Width="300" HorizontalAlignment="Left" Margin="10,10,0,10"/>
+            <Label Content="Password" Foreground="White" FontSize="25" Margin="0,0,413.6,0" Width="300" FontWeight="Bold" Background="{x:Null}"/>
+            <PasswordBox x:Name="txt_Password" Background="FloralWhite" Foreground="Black" FontSize="18" Width="300" HorizontalAlignment="Left" Margin="10,10,0,10"/>
+            <Button x:Name="btnSubmit" Content="Submit" Margin="282,30,281.6,30"  Background="FloralWhite" Foreground="Black" FontSize="22" Click="Click_Submit" Width="150" Height="45"/>
+            <Button Content="Back to Home" Height="45" Background="FloralWhite" Margin="292,0,0,0" HorizontalAlignment="Left" Width="150" FontSize="19" RenderTransformOrigin="0.376,0.7" Click="Home_click"/>
+        </StackPanel>
+    </Border>
+</Window>

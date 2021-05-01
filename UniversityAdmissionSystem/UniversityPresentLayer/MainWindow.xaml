@@ -1,0 +1,79 @@
+﻿<Window x:Class="UniversityAdmissionPL.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UniversityAdmissionPL"
+        mc:Ignorable="d"
+        Title="University Management System" Height="450" Width="800" FontWeight="Bold" ResizeMode="CanMinimize" Icon="University.jpg" >
+    <Window.Background>
+        <ImageBrush ImageSource="University.jpg"/>
+    </Window.Background>
+    <Grid HorizontalAlignment="Left" Margin="0,-2,-0.4,2">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="290*"/>
+            <ColumnDefinition Width="30*"/>
+            <ColumnDefinition Width="143*"/>
+            <ColumnDefinition Width="143*"/>
+            <ColumnDefinition Width="24*"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="160*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="47*"/>
+            <RowDefinition Height="210*"/>
+            <RowDefinition Height="163*"/>
+        </Grid.RowDefinitions>
+
+        <Menu Margin="4,0,214.6,19.2" Height="26" VerticalAlignment="Bottom"/>
+
+
+
+
+        <!--<Label Content="WELCOME TO HAPPY UNIVERSITY" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="229,87.8,26.6,0" Width="374" FontWeight="Bold" FontSize="18" ScrollViewer.HorizontalScrollBarVisibility="Auto" FontStyle="Italic" Grid.Row="1" Height="60" Foreground="White"/>-->
+
+        <ScrollViewer x:Name="course_scroll"  Margin="204,76.8,-0.6,3" Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="7">
+
+
+            <ListView x:Name="lst_Of_Courses" Width="566" Height="287" Canvas.Left="9" Canvas.Top="311">
+                <ListView.Background>
+                    <SolidColorBrush Color="AliceBlue" Opacity="0.6"/>
+                </ListView.Background>
+
+                <ListView.View>
+                    <GridView x:Name="grd" >
+
+                        <GridViewColumn x:Name="fname_view" Header="Program ID" DisplayMemberBinding="{Binding ScheduledProgramID}" Width="100" />
+                        <GridViewColumn Header="ProgramName" DisplayMemberBinding="{Binding ProgramName}" Width="100"/>
+                        <GridViewColumn Header="Location" DisplayMemberBinding="{Binding Location}" Width="90"/>
+                        <GridViewColumn Header="StartDate" DisplayMemberBinding="{Binding StartDate,StringFormat={}{0:dd-MM-yy}}" Width="90"/>
+                        <GridViewColumn Header="EndDate" DisplayMemberBinding="{Binding EndDate, StringFormat={}{0:dd-MM-yy}}" Width="90"/>
+                        <GridViewColumn Header="WeekSession" DisplayMemberBinding="{Binding SessionsPerWeek}" Width="100"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+
+
+        </ScrollViewer>
+
+
+        <Label Content="             All Scheduled Courses" HorizontalAlignment="Left" Margin="73,51.8,0,0" VerticalAlignment="Top" Width="207"  Height="24" Grid.Row="1" Grid.ColumnSpan="2" Opacity="1" Background="#FF473E8B" FontFamily="Cambria" Foreground="White" Grid.Column="2">
+
+
+        </Label>
+        <Menu Margin="4,0,215.6,19.2" Height="26" VerticalAlignment="Bottom">
+            <MenuItem Header="Menu" Foreground="#FFF3E8E8" Padding="6,0,6,0" Background="#FF473E89" FontFamily="Cambria" FontWeight="Bold" FontSize="14" Width="70" Height="30">
+                <MenuItem Header="Apply Online(Student)" Click="Apply_Click" Background="#FF473EA7"/>
+
+                <MenuItem Header="Member of admission Commite" Click="MAC_Click" Background="#FF473E8B"/>
+                <MenuItem Header="Admin Login" Click="Admin_Click" Background="#FF473E8B"/>
+                <MenuItem Header="Exit" Click="exit_Click" Background="#FF473E8B"/>
+
+
+            </MenuItem>
+        </Menu>
+        <Label Content="&quot;You can't realize your dreams unless you have one to begin with.&quot;&#xD;&#xA;                                        Thomas Edison" HorizontalAlignment="Left" Margin="284,23,0,0" VerticalAlignment="Top" Grid.ColumnSpan="7" Width="484" Height="50" Grid.RowSpan="2" Foreground="#FF060303" FontFamily="Cambria" FontStyle="Italic" FontSize="16"/>
+
+    </Grid>
+</Window>
